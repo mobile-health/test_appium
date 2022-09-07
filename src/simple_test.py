@@ -32,10 +32,24 @@ el.click()
 el.click()
 el.click()
 
-driver_helper.wait_for_el_by_id(el_id="group_phone")
-btn_login_with_phone = driver_helper.find_el_by_id("group_phone")
+btn_login_with_phone = driver_helper.wait_and_find("group_phone")
 btn_login_with_phone.click()
 
+edt_phone = driver_helper.wait_and_find("edt_phone_number")
+edt_phone.click()
+edt_phone.set_text("31231234")
 
-time.sleep(4.0)
+btn_contiue = driver_helper.wait_and_find("btn_continue")
+btn_contiue.click()
+
+edt_codes = driver_helper.wait_and_find("edt_codes")
+edt_codes.click()
+driver_helper.keyevent(8)
+driver_helper.keyevent(9)
+driver_helper.keyevent(10)
+driver_helper.keyevent(11)
+driver_helper.keyevent(12)
+driver_helper.keyevent(13)
+
+time.sleep(10.0)
 driver_helper.quit()

@@ -28,5 +28,12 @@ class DriverHelper:
     def find_el_by_id(self, el_id: str = ""):
         return self.driver.find_element(by=AppiumBy.ID, value=el_id)
 
+    def wait_and_find(self, el_id: str = "", timeout=10):
+        self.wait_for_el_by_id(timeout=timeout, el_id=el_id)
+        return self.find_el_by_id(el_id)
+
+    def keyevent(self, keycode: int):
+        self.driver.keyevent(keycode)
+
     def quit(self):
         self.driver.quit()
