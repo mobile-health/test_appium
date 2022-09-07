@@ -1,3 +1,5 @@
+import time
+
 from driver_helper import DriverHelper
 
 driver_helper = DriverHelper()
@@ -27,5 +29,13 @@ driver_helper.wait_for_el_by_id(el_id="tv_next")
 
 el = driver_helper.find_el_by_id("tv_next")
 el.click()
+el.click()
+el.click()
 
+driver_helper.wait_for_el_by_id(el_id="group_phone")
+btn_login_with_phone = driver_helper.find_el_by_id("group_phone")
+btn_login_with_phone.click()
+
+
+time.sleep(4.0)
 driver_helper.quit()
