@@ -4,27 +4,6 @@ from driver_helper import DriverHelper
 
 driver_helper = DriverHelper()
 
-
-# class SimpleTest(unittest.TestCase):
-
-#     @classmethod
-#     def setUpClass(cls) -> None:
-#         cls.driver = webdriver.Remote(
-#             "http://localhost:4723/wd/hub", desired_cap)
-
-#     @classmethod
-#     def tearDownClass(cls) -> None:
-#         cls.driver.quit()
-
-#     def getResult(self)    :
-#         el = self.driver.find_element(by=AppiumBy.ACCESSIBILITY_ID, value='tv_next')
-#         el.click()
-
-
-# if __name__ == "__main__":
-#     suite = unittest.TestLoader().loadTestsFromTestCase(SimpleTest)
-#     unittest.TextTestRunner(verbosity=2).run(suite)
-
 driver_helper.wait_for_el_by_id(el_id="tv_next")
 
 el = driver_helper.find_el_by_id("tv_next")
@@ -44,12 +23,7 @@ btn_contiue.click()
 
 edt_codes = driver_helper.wait_and_find("edt_codes")
 edt_codes.click()
-driver_helper.keyevent(8)
-driver_helper.keyevent(9)
-driver_helper.keyevent(10)
-driver_helper.keyevent(11)
-driver_helper.keyevent(12)
-driver_helper.keyevent(13)
+edt_codes.set_text("123456")
 
 time.sleep(10.0)
 driver_helper.quit()
