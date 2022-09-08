@@ -1,15 +1,18 @@
-from appium import webdriver
-import pathlib
-import json
+from testcase import *
+import unittest
+from html_reporter import HTMLTestRunner
+from driver_helper import global_driver_helper
 
-path = str(pathlib.Path(__file__).parent.resolve())
+if __name__ == "__main__":
+    runner = HTMLTestRunner(
+        report_filepath="sample_report.html",
+        title="My unit test",
+        description="This demonstrates the report output by HTMLTestRunner.",
+        open_in_browser=False
+    )
 
-desired_cap_file = path + "/../desired_cap.json"
+    unittest.main(testRunner=runner, exit=False)
 
-with open(desired_cap_file) as f:
-    desired_cap = json.load(f)
+    global_driver_helper.quit()
 
-driver = webdriver.Remote("http://localhost:4723/wd/hub", desired_cap)
-
-
-print("ToanTK")
+    print("ToanTK end of life")

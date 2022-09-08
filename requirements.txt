@@ -2,3 +2,4 @@ Appium-Python-Client==2.6.1
 autopep8
 robotframework==5.0.1
 robotframework-appiumlibrary==1.6.3
+html-reporter==0.2.6

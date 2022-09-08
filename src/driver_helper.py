@@ -15,6 +15,8 @@ app_package_name = "com.mhealth.manadr.test"
 with open(desired_cap_file) as f:
     desired_cap = json.load(f)
 
+desired_cap['app'] = path + "/../app-sat-debug.apk"
+
 
 class DriverHelper:
 
@@ -36,3 +38,12 @@ class DriverHelper:
 
     def quit(self):
         self.driver.quit()
+    
+    def close_app(self):
+        self.driver.close_app()
+    
+    def launch_app(self):
+        self.driver.launch_app()
+
+
+global_driver_helper = DriverHelper()

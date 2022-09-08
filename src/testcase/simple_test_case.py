@@ -1,16 +1,9 @@
-import unittest
 import time
 
-from driver_helper import DriverHelper
+from common import BaseTestCase
 
 
-class SampleTestCase(unittest.TestCase):
-
-    def setUp(self) -> None:
-        self.driver_helper = DriverHelper()
-
-    def tearDown(self) -> None:
-        self.driver_helper.quit()
+class SampleTestCase(BaseTestCase):
 
     def testSample(self):
         self.driver_helper.wait_for_el_by_id(el_id="tv_next")
@@ -34,7 +27,4 @@ class SampleTestCase(unittest.TestCase):
         edt_codes.click()
         edt_codes.set_text("123456")
 
-        time.sleep(10.0)
-
-
-unittest.main()
+        time.sleep(20.0)
