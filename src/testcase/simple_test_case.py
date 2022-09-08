@@ -5,6 +5,12 @@ from common import BaseTestCase
 
 class SampleTestCase(BaseTestCase):
 
+    def testSample_2(self):
+        self.driver_helper.wait_for_el_by_id(el_id="tv_next")
+
+        # raise Exception("Xiu is good")
+        self.fail("Xiu fail")
+
     def testSample(self):
         self.driver_helper.wait_for_el_by_id(el_id="tv_next")
 
