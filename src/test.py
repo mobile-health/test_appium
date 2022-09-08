@@ -8,11 +8,10 @@ if __name__ == "__main__":
         report_filepath="sample_report.html",
         title="My unit test",
         description="This demonstrates the report output by HTMLTestRunner.",
-        open_in_browser=False
+        open_in_browser=False,
+        verbosity=2
     )
 
     unittest.main(testRunner=runner, exit=False)
 
     global_driver_helper.quit()
-
-    print("ToanTK end of life")
