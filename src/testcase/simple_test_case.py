@@ -27,9 +27,9 @@ class SampleTestCase(BaseTestCase):
         edt_codes.click()
         edt_codes.set_text("123456")
 
-        self.driver_helper.wait_for_text(text="Home")
-
         rv_main = self.driver_helper.wait_and_find("rv_main", timeout=20)
+
+        self.driver_helper.wait_for_text("Other Services")
 
         # self.driver_helper.scroll(
         #     rv_main.id, 5, lambda: self.driver_helper.has_text("Top Stories"))

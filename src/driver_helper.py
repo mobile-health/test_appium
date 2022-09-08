@@ -29,7 +29,7 @@ class DriverHelper:
         WebDriverWait(self.driver, timeout)\
             .until(EC.presence_of_element_located((By.ID, el_id)))
 
-    def wait_for_text(self, timeout=10, text: str = ""):
+    def wait_for_text(self, text: str = "", timeout=10):
         search_x_path = f"//*[contains(@text, \"{text}\")]"
 
         WebDriverWait(self.driver, timeout)\
@@ -70,13 +70,13 @@ class DriverHelper:
         except:
             return False
 
-    def scroll(self, full_el_id: str, max_retries: int = 1, until=None):
+    def scroll(self, full_el_id: str, max_retries: int = 1, percent: float = 0.5, until=None):
 
         for i in range(max_retries):
             self.driver.execute_script('mobile: scrollGesture', {
                 'elementId': full_el_id,
                 'direction': 'down',
-                'percent': 2.0
+                'percent': percent
             })
 
             if until:
@@ -87,7 +87,7 @@ class DriverHelper:
         if until:
             raise Exception("Scroll is not success")
 
-    def scroll_to_end(self, full_el_id: str):
+    def scroll_to_end(self, full_el_id: str, percent: float = 0.5):
 
         max = 20
 
@@ -98,7 +98,7 @@ class DriverHelper:
             self.driver.execute_script('mobile: scrollGesture', {
                 'elementId': full_el_id,
                 'direction': 'down',
-                'percent': 0.5
+                'percent': percent
             })
 
             now_page_source = self.driver.page_source
