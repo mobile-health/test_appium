@@ -26,5 +26,3 @@ def login(
     edt_codes.click()
     edt_codes.set_text("123456")
 
-def register():
-    pass
