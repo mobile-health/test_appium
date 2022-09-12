@@ -1,6 +1,6 @@
 import json
-from lib2to3.pgen2 import driver
 import pathlib
+from lib2to3.pgen2 import driver
 
 from appium import webdriver
 from appium.webdriver.common.appiumby import AppiumBy
@@ -70,6 +70,10 @@ class DriverHelper:
         except:
             return False
 
+    def find_el_by_text(self, text: str):
+        search_x_path = f"//*[contains(@text, \"{text}\")]"
+        return self.driver.find_element(by=AppiumBy.XPATH, value=search_x_path)
+
     def scroll(self, full_el_id: str, max_retries: int = 1, percent: float = 0.5, until=None):
 
         for i in range(max_retries):
@@ -105,6 +109,17 @@ class DriverHelper:
 
             if last_page_source == now_page_source:
                 break
+
+    def find_clickable_parent(self, element):
+
+        temp = element
+
+        for i in range(10):
+            parent = temp.parent
+            if parent.clickable:
+                return parent
+
+        return None
 
 
 global_driver_helper = DriverHelper()
