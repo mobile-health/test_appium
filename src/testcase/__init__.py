@@ -1,1 +1,3 @@
-from .simple_test_case import SampleTestCase
+from os import uname
+# from .register import RegisterSuccessful
+from .login import LoginSuccessful

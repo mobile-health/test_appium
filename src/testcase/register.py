@@ -3,7 +3,7 @@ import time
 from common import BaseTestCase
 
 
-class SampleTestCase(BaseTestCase):
+class RegisterSuccessful(BaseTestCase):
 
     def testSample_2(self):
         self.driver_helper.wait_for_el_by_id(el_id="tv_next")

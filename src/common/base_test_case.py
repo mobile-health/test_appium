@@ -11,3 +11,5 @@ class BaseTestCase(unittest.TestCase):
 
     def tearDown(self) -> None:
         self.driver_helper.close_app()
+
+    
