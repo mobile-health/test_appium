@@ -4,4 +4,3 @@ from os import uname
 # from .appointment import BookApptSuccessful
 from .register import testRegisterByPhone
 from .teleconsult import ProviderPool
-from .teleconsult import ProviderPool
