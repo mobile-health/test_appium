@@ -1,7 +1,7 @@
 import time
 
 from common import BaseTestCase
-from testcase.helper.login_helper import login
+from testcase.helper.login_helper import loginByPhone
 
 
 class LoginSuccessful(BaseTestCase):

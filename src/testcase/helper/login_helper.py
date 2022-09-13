@@ -2,7 +2,7 @@ import imp
 from pkgutil import ImpImporter
 from driver_helper import global_driver_helper as driver_helper
 
-def login(
+def loginByPhone(
     phone_number, password
 ):
     driver_helper.wait_for_el_by_id(el_id="tv_next")
@@ -17,14 +17,11 @@ def login(
 
     edt_phone = driver_helper.wait_and_find("edt_phone_number")
     edt_phone.click()
-    edt_phone.set_text("31231234")
+    edt_phone.set_text(phone_number)
 
     btn_contiue = driver_helper.wait_and_find("btn_continue")
     btn_contiue.click()
 
     edt_codes = driver_helper.wait_and_find("edt_codes")
     edt_codes.click()
-    edt_codes.set_text("123456")
-
-def register():
-    pass
+    edt_codes.set_text(pasword)

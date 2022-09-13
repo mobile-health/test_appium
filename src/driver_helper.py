@@ -37,6 +37,9 @@ class DriverHelper:
 
     def find_el_by_id(self, el_id: str = ""):
         return self.driver.find_element(by=AppiumBy.ID, value=el_id)
+        
+    def find_el_by_xpath(self, el_xpath: str = ""):
+        return self.driver.find_element(by=AppiumBy.XPATH, value=el_xpath)
 
     def has_el_by_id(self, el_id: str = ""):
         try:
