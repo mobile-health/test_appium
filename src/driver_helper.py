@@ -1,6 +1,5 @@
 import json
 import pathlib
-from lib2to3.pgen2 import driver
 
 from appium import webdriver
 from appium.webdriver.common.appiumby import AppiumBy
@@ -37,6 +36,9 @@ class DriverHelper:
 
     def find_el_by_id(self, el_id: str = ""):
         return self.driver.find_element(by=AppiumBy.ID, value=el_id)
+
+    def find_els_by_id(self, el_id: str = ""):
+        return self.driver.find_elements(by=AppiumBy.ID, value=el_id)
 
     def has_el_by_id(self, el_id: str = ""):
         try:
@@ -109,17 +111,6 @@ class DriverHelper:
 
             if last_page_source == now_page_source:
                 break
-
-    def find_clickable_parent(self, element):
-
-        temp = element
-
-        for i in range(10):
-            parent = temp.parent
-            if parent.clickable:
-                return parent
-
-        return None
 
 
 global_driver_helper = DriverHelper()

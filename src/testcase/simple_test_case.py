@@ -1,12 +1,11 @@
 import time
 
 from common import BaseTestCase
-from appium.webdriver.common.appiumby import AppiumBy
 
 
 class SampleTestCase(BaseTestCase):
 
-    def testSample_2(self):
+    def abcSample_2(self):
         self.driver_helper.wait_for_el_by_id(el_id="tv_next")
 
         # raise Exception("Xiu is good")
@@ -37,11 +36,6 @@ class SampleTestCase(BaseTestCase):
         rv_main = self.driver_helper.wait_and_find("rv_main", timeout=20)
 
         self.driver_helper.wait_for_text("Clinic Visit")
-
-        item = self.driver_helper.find_el_by_text("Clinic Visit")
-
-        item.parent.click()
-
 
         # self.driver_helper.scroll(
         #     rv_main.id, 5, lambda: self.driver_helper.has_text("Top Stories"))
