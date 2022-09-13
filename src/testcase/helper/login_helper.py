@@ -29,4 +29,7 @@ def loginByPhone(
 =======
     edt_codes.set_text("123456")
 
+<<<<<<< HEAD
+>>>>>>> 26654941ccae6936f2ac07e36f2d8022b7ad2588
+=======
 >>>>>>> 26654941ccae6936f2ac07e36f2d8022b7ad2588
