@@ -1,13 +1,13 @@
 import time
 
 from common import BaseTestCase
-from testcase.helper.login_helper import login
+from testcase.helper.test_login_helper import test_login
 
 
-class ProviderPool(BaseTestCase):
+class TestProviderPool(BaseTestCase):
 
-    def request_consult_successful(self):
-        login("31231234", "123456")
+    def test_request_consult_successful(self):
+        test_login("31231234", "123456")
     #Click button [Consult a doctor online]
 
 

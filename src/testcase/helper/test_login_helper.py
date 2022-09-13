@@ -2,7 +2,7 @@ import imp
 from pkgutil import ImpImporter
 from driver_helper import global_driver_helper as driver_helper
 
-def login(
+def test_login(
     phone_number, password
 ):
     driver_helper.wait_for_el_by_id(el_id="tv_next")
