@@ -24,4 +24,9 @@ def loginByPhone(
 
     edt_codes = driver_helper.wait_and_find("edt_codes")
     edt_codes.click()
+<<<<<<< HEAD
     edt_codes.set_text(pasword)
+=======
+    edt_codes.set_text("123456")
+
+>>>>>>> 26654941ccae6936f2ac07e36f2d8022b7ad2588
