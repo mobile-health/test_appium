@@ -17,7 +17,7 @@ def test_login(
 
     edt_phone = driver_helper.wait_and_find("edt_phone_number")
     edt_phone.click()
-    edt_phone.set_text("31231234")
+    edt_phone.set_text(phone_number)
 
     btn_contiue = driver_helper.wait_and_find("btn_continue")
     btn_contiue.click()
@@ -25,4 +25,3 @@ def test_login(
     edt_codes = driver_helper.wait_and_find("edt_codes")
     edt_codes.click()
     edt_codes.set_text("123456")
-

@@ -1,8 +1,8 @@
 {
     "platformName": "android",
     "automationName": "uiautomator2",
-    "platformVersion": "9",
     "deviceName": "Automation",
     "appPackage": "com.mhealth.manadr.test",
-    "appActivity": "com.mhealth.manadr.ui.home.SplashNewActivity"
+    "appActivity": "com.mhealth.manadr.ui.home.SplashNewActivity",
+    "ignoreHiddenApiPolicyError": true
 }
